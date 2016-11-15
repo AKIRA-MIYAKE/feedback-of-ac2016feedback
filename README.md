@@ -1,0 +1,298 @@
+# "AngularConnect 2016 Feedback" Feedback
+---
+
+## Introduction
+
+---
+
+### AngularConnectとは
++ ヨーロッパ最大級のAungularカンファレンス
++ Googleのコアチームを含む、世界をリードするAngularエキスパートを対象とした2日間にわたるマルチトラックカンファレンス
++ 2016年は9/27 - 28にロンドンで開催
+
+---
+
+### AngularConnect 2016 Feedback
++ トップゲート主催のAngularConnectの報告会
+  + http://topgate.connpass.com/event/41750/
++ 報告会の資料は以下のURLから
+  + https://docs.google.com/presentation/d/1lAkNVF7pkQblfXp3Az63jlbIWC-KScAnYoxkKnRKp5s/edit#slide=id.g181313db1b_0_41
+
+---
+
+### セッション内容
++ Keynote Day-1
++ Mobile apps? Trust no one... except me
++ Secure your Angular applications
++ Rescue your mobile experience!
++ Angular 2.0 Animations
++ One Code to rule them all: Cross-platform development with Angular 2, Cordova & Electron
++ Angular Material 2
++ SEO best practices and requirements for modern sites
++ The Angular 2 Compiler
++ Cross Site Request Funkery: Securing Your Angular Apps From Evil Doers
++ Why common sense is not enough: user testing and prototyping
++ Building Progressive Web Apps and Hybrid Apps with Ionic
++ Go beast mode with realtime reactive interfaces in Angular 2 and Firebase (observables)
++ Redux with AngularJS
++ Storytelling with your data
++ Optimizing Angular 2 Apps
++ Learning the New Tech Lingua Franca: Social Media
++ Why I am betting my future on Angular 2
++ Neural Networks and Machine Learning. Building Intelligent Angular Applications
++ Keynote Day-2
++ RxJS 5 - Thinking Reactively
++ Move, shake and drop with NativeScript and Angular 2
++ Angular 2 Forms
++ Angular Community Up & Running
++ Angular CLI
++ From .component() to @component()
++ 360 & VR Vídeo with Angular 2
++ The Angular Router
++ Look Deeply Into Your App with Augury
++ AngularJS in industry: Developing responsive aviation weather products with an agile, cross site team
++ Testing Angular 2
++ How fast can web-apps be?
++ Connect your Angular app to any existing backend with GraphQL
++ Universal Tooling
++ Testing for accessibility in Angular 1 and 2
++ Team Panel
+
+---
+
+### 今回話す内容
+途中参加 + 量が多いので、今回は以下の内容について
+
++ Angualr-CLI
++ Angular1
++ Accessibility(A11y)
++ Debugger
++ SEO
++ NativeScript
+
+---
+
+## Angular-CLI
+
+---
+
+### Angular-CLIとは
+
+[angular/angular-cli](https://github.com/angular/angular-cli)
+
++ Angular 2アプリケーションのためのCLIツール
+  + プロジェクトスキャフォールディング
+  + コンポーネントスキャフォールディング
+  + ローカルサーバ
+  + ビルド
+  + テスト
+  + GitHub Pages連携
+  + etc..
+
+---
+
+### スキャフォールディング
+ディレクトリ構成など、悩みどころになりそうなところを準備してくれるが嬉しい。
+
++ プロジェクト
+  + コマンド1つで実行可能なAngularプロジェクトが用意される
+  + 公式スタイルガイドに則ったベストプラクティスの構成
++ コンポーネント
+  + Component、Directive、Serviceなど各種コンポーネントを生成
+
+---
+
+### ビルド & テスト
++ ビルド
+  + 環境ごとの変数を管理する仕組みを提供
+  + プロダクションビルドでは、ファイルサイズの削減等も行ってくれる
++ テスト
+  + ユニットテストはKarma + Jasmine
+  + E2EテストはProtoactor
+
+---
+
++ 詳しい内容は[angular/angular-cli](https://github.com/angular/angular-cli)を参照
++ 新規開発であれば、特段の理由がなければCLIを使ったほうが良いとのこと
++ コアライブラリも含めて頻繁なアップデート
+  + npm instsallのタイミングで動かないことも
+  + プロジェクトではpackage.jsonでバージョンを固定することを推奨
+
+---
+
+### 追加予定の機能
+
++ angular-universalに対応
++ バージョンアップ時のマイグレーション
++ プラグインの管理
++ JSDocsの出力
++ etc..
+
+---
+
+## Angular1
+
+---
+
+### Angular1.5
++ Angular2と同様のアーキテクチャを取ることが可能
+  + Component Module
+  + One-way Data Flow
+  + Lifecycle Hooks
++ コンポーネントのスコープ以外はほぼ同等
++ コンポーネント化されているのであれば、テンプレートはほぼ流用可能
+  + イベントの扱いに多少の違いはあるが、$eventとすることで対応可能
+
+---
+
++ 逆にコンポーネント化されていないのであれば、Angular2への移行難易度は高い
++ アーキテクチャの見直しも含め、新規開発も視野に
+
+---
+
+### Angular + Redux
++ ngRedux
+  + Angular1でReduxを実装したもの
+  + `$ngRedux.connect()(scope)`
+  + [angular-redux/ng2-redux](https://github.com/angular-redux/ng2-redux)もあるらしい
+
+---
+
+## Accessibility(A11y)
+
+---
+
+### A11y Testing (Angular1)
++ Accessibility Developer Tools
+  + 黒字に青文字だと警告がでる…など
++ ngAria
+  + Angualr1公式ライブラリ
+  + 自動的にARIA属性を制御
++ aXe Testing
+  + Chrome拡張
+  + JSライブラリとしてaXe Core
+  + E2Eテストの中でチェック可能
+
+---
+
+### 参考
+[American Airlines](https://www.aa.com/homePage.do)
+
+---
+
+### Angular2 + A11y
++ まだ対応していないので、issueを追ってくださいとのこと
++ E2EテストではaXeを利用することが可能
+
+---
+
+## Debugger
+
+---
+
+### Angular Augury
+
++ Chrome拡張
+  + 開発元: Rangle.io
++ [aungry.angular.io](https://augury.angular.io/)
+  + 半公式プロジェクト
+
+---
+
+### 機能
++ Angular2アプリケーションの動的デバッグが可能
+  + コンポーネントのプロパティを動的に変更したり…といったことが可能
++ Angularフレームワークが用意しているメソッドを利用
+  + プロダクションビルドの際は、それらのメソッドはwindowオブジェクトから全て削除されるため安全
+
+---
+
+## SEO
+
+---
+
+### [SEO best practices and requirements for modern sites](https://www.youtube.com/watch?v=JlP5rBynK3E&feature=youtu.be)
+
++ GoogleのSearchの中の人の話
++ Angularに限らず参考になる話
++ BOTがどのようにページを認識しているか
+
+---
+
+### 良い/悪いURL
++ 良いURL
+  + Protocol, host, path, filename, querystring
+  + 1 URL per piece of content
++ 悪いURL
+  + Same URL for multiple states
+  + URLs with "#" for unique content
+  + Irrelevant URL elements(session/private)
+
+---
+
+### "Canonical URL"
+  + 自サイトの重複インデックスを解消するもの
+  + 検索エンジンが適用するリンクとコンテンツを指定のURLに還元すべきということを伝えるもの
+
+```
+<link rel="canonical" href="http://example.com">
+```
+
+---
+
+### Googlebot
++ 機能的にはモダンブラウザと同等
++ 未サポート(use polyfills/degradation)
+  + Promise, Service Worker, Fetch API, Local Storage, ES6/ES2015
++ Embedded URLはrobots.txtでブロックできない
++ `<a>`タグのリンクはクリックされない
+
+---
+
+### レンダリングについて
++ インデックスする全てのページをレンダリング
++ レンダリング失敗時はraw HTMLが利用される
++ SPAではraw HTMLは同じ
+  + 重複と見なされる
+
+---
+
+### 非表示テキストについて
++ 可視状態のコンテンツが優先される
++ ロードされたが表示されないコンテンツは評価されない
++ イベント(click, hover, scroll)で表示されるコンテンツはインデックスされず、ランクもされない
+
+---
+
+### Pre Renderingのすすめ
++ Googlebotがどのようにレンダリングするのか、正しくレンダリングされて見えるかを維持し続けるのは大変
++ Pre Renderedされたコンテンツは全てのユーザにとってベスト
+
+---
+
+### Google Search Consol
++ Googlebotにどのように認識されているかを確認できる
++ 使いましょう
+
+---
+
+## NativeScript
+
+---
+
+### Angularでネイティブアプリ
++ JavaScriptでAndroid, iOS, Windowsのアプリが開発できるように
++ No DOM -> XML(UI)+JS(Logic)+CSS(Style)
++ NativeのAPIを利用可能
++ Angular2はDOMに直接依存しない
+  + プラットフォームに応じてDI
+
+---
+
+### 雑感
++ React Nativeっぽい
++ UIは個別に書く模様
+  + サーバにロジックがあるようなアプリだとメリットが薄い
+  + デバイスでグリグリ動くようなアプリはネイティブの方がパフォーマンス的に有利
++ Titaniumを思い出す
++ とりあえずアプリ化が目的ならCordovaのほうがいいかも
